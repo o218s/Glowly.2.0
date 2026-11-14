@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowly | Skincare Inteligente</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <a class="logo" href="#inicio">Glowly<span>✦</span></a>
+    <nav id="menu">
+        <a href="#inicio">Início</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#como">Descobre a tua pele</a>
+        <a href="#assistente">Assistente IA</a>
+        <a href="#sobre">Sobre nós</a>
+    </nav>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+</header>
+
+<section class="hero" id="inicio">
+    <div class="hero-content">
+        <span class="tag">✦ SKINCARE INTELIGENTE · BELEZA REAL</span>
+        <h1>Descobre o que<br>a tua pele <span>precisa.</span></h1>
+        <p>Com a Glowly, tens uma rotina de cuidados personalizada, com a ajuda da nossa tecnologia de análise de pele e do nosso assistente virtual.</p>
+
+        <div class="actions">
+            <button class="primary" onclick="document.getElementById('foto').click()">📷 Analisar a minha pele →</button>
+            <button class="secondary" onclick="location.href='#assistente'">♡ Falar com o assistente →</button>
+        </div>
+
+        <input type="file" id="foto" accept="image/*" hidden onchange="selecionarFoto(event)">
+        <p id="resultado-foto"></p>
+
+        <div class="benefits">
+            <span>◎ Análise por foto</span>
+            <span>♡ Rotina personalizada</span>
+            <span>✧ Produtos selecionados</span>
+        </div>
+    </div>
+</section>
+
+<section class="how" id="como">
+    <div class="how-intro">
+        <span class="tag">A TUA PELE, O TEU PLANO</span>
+        <h2>Como funciona?</h2>
+        <p>Em poucos minutos, criamos uma análise da tua pele e uma rotina de cuidados à tua medida.</p>
+        <button class="primary" onclick="document.getElementById('foto').click()">Começar agora →</button>
+    </div>
+
+    <div class="step">
+        <div class="step-icon">📱</div>
+        <h3>1. Tira uma foto</h3>
+        <p>Captura a tua pele com a câmara do telemóvel.</p>
+    </div>
+    <div class="step">
+        <div class="step-icon">✧</div>
+        <h3>2. A nossa IA analisa</h3>
+        <p>Identifica características e necessidades da pele.</p>
+    </div>
+    <div class="step">
+        <div class="step-icon">📋</div>
+        <h3>3. Recebes a análise</h3>
+        <p>Obténs uma rotina de cuidados recomendada.</p>
+    </div>
+    <div class="step">
+        <div class="step-icon">♡</div>
+        <h3>4. Acompanha</h3>
+        <p>Guarda o teu perfil e acompanha a evolução.</p>
+    </div>
+</section>
+
+<section class="products" id="produtos">
+    <span class="tag">PRODUTOS EM DESTAQUE</span>
+    <h2>Recomendados para ti ✦</h2>
+    <p class="subtitle">Selecionamos produtos para as necessidades da tua pele.</p>
+
+    <div class="product-layout">
+        <div class="product-grid">
+
+            <article class="product">
+                <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=500" alt="Produto de limpeza facial">
+                <div class="product-info">
+                    <small>Limpeza</small>
+                    <h3>Gel de Limpeza Facial</h3>
+                    <p>Remove impurezas sem secar a pele.</p>
+                    <div class="price">14,90 € <button onclick="addCart('Gel de Limpeza Facial',14.90)">🛒</button></div>
+                </div>
+            </article>
+
+            <article class="product">
+                <img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=500" alt="Sérum facial">
+                <div class="product-info">
+                    <small>Tratamento</small>
+                    <h3>Sérum Anti-Imperfeições</h3>
+                    <p>Ajuda a equilibrar a pele.</p>
+                    <div class="price">22,90 € <button onclick="addCart('Sérum Anti-Imperfeições',22.90)">🛒</button></div>
+                </div>
+            </article>
+
+            <article class="product">
+                <img src="https://images.unsplash.com/photo-1601612628452-9e99ced43524?w=500" alt="Creme hidratante">
+                <div class="product-info">
+                    <small>Hidratação</small>
+                    <h3>Creme Hidratante Leve</h3>
+                    <p>Hidrata e protege a barreira natural.</p>
+                    <div class="price">18,90 € <button onclick="addCart('Creme Hidratante Leve',18.90)">🛒</button></div>
+                </div>
+            </article>
+
+            <article class="product">
+                <img src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=500" alt="Proteção solar">
+                <div class="product-info">
+                    <small>Proteção Solar</small>
+                    <h3>Protetor Solar FPS 50+</h3>
+                    <p>Proteção para o dia a dia.</p>
+                    <div class="price">16,90 € <button onclick="addCart('Protetor Solar FPS 50+',16.90)">🛒</button></div>
+                </div>
+            </article>
+
+        </div>
+
+        <aside class="assistant" id="assistente">
+            <div class="bot">🤖</div>
+            <span class="tag">✦ INTELIGÊNCIA ARTIFICIAL</span>
+            <h2>O teu assistente virtual ✧</h2>
+            <p>Tens dúvidas? Estamos aqui para ajudar!</p>
+
+            <button class="question" onclick="responder('Tenho pele oleosa, o que devo usar?')">Tenho pele oleosa, o que devo usar?</button>
+            <button class="question" onclick="responder('Posso combinar vários produtos?')">Posso combinar vários produtos?</button>
+            <button class="question" onclick="responder('Como faço a minha rotina de manhã?')">Como faço a minha rotina de manhã?</button>
+            <button class="question" onclick="responder('Que produtos usar para pele sensível?')">Que produtos usar para pele sensível?</button>
+
+            <div id="resposta"></div>
+
+            <div class="chat">
+                <input id="pergunta" type="text" placeholder="Escreve a tua pergunta...">
+                <button onclick="enviar()">➜</button>
+            </div>
+        </aside>
+    </div>
+    <p id="cart-info">Carrinho: 0 produtos | Total: 0,00 €</p>
+</section>
+
+<section class="personal" id="sobre">
+    <div>
+        <span class="tag">✦ A TUA ÁREA PESSOAL</span>
+        <h2>O teu espaço, a tua pele</h2>
+        <p>Consulta o teu perfil, rotina e histórico de análises.</p>
+        <button class="primary" onclick="alert('Área pessoal em desenvolvimento!')">Aceder à minha conta →</button>
+    </div>
+    <div>✧<p>Perfil de pele</p></div>
+    <div>♡<p>Rotina personalizada</p></div>
+    <div>◷<p>Histórico de análises</p></div>
+    <div>♧<p>Lembretes de cuidados</p></div>
+</section>
+
+<footer>
+    <a class="logo" href="#inicio">Glowly<span>✦</span></a>
+    <p>Mais do que cosméticos. Uma rotina feita para ti.</p>
+    <p>Ajuda · Privacidade · Contacto</p>
+    <p>© 2026 Glowly</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
